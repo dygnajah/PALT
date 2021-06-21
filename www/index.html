@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/index.css">
+        <title>Rahsia Kambing</title>
+
+
+        <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+        <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.0/mapbox-gl.js"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+        .mySlides {display:none;}
+        </style>
+
+    </head>
+    <script>
+
+        function ValidationEvent() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        if (name != '' && email != '' )
+        {
+          alert("Thank you for your details.");
+          return true;
+        }
+        else{
+          alert("You have submit yours!");
+          return false;
+         }
+        }
+        function setStyle(x){
+            document.getElementById(x).style.background = "pink";
+        }
+        function upperCase(y){
+            var x = document.getElementById(y).value;
+            document.getElementById(y).value = x.toUpperCase();
+        }
+
+        function getValue() {
+
+            result.innerHTML = language.value;
+            result.style.background = "red";
+        }
+
+
+</script>
+    <body bgcolor="#4B946A">
+        <div data-role="page" id="page-1" class="w3-theme-l2" >
+            <div data-role="navbar" >
+                <ul class="navigation">
+                    <li><a href="#page-1">About Rahsia Kambing</a></li>
+                    <li><a href="#page-2">About Rahsia Kambing</a></li>
+                    <li><a href="#page-3">Kaedah Pembayaran</a></li>
+                </ul>
+            </div>
+        <div id="content1">
+            <center><img src="img/kambing.PNG"></center>
+            <h1>"Berminat Menternak Kambing?"</h1>
+            <p>Ketahui... Bagaimana Cara Memulakan Penternakan Kambing Yang Betul Dengan Kos Yang Rendah! Tanpa Perlu
+                Membuat Sebarang Pinjaman!.
+            </p>
+        <br>
+        <br>
+        <form method="post" action="contact.php">
+            <div data-role="fieldcontain">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" value="" onfocus="setStyle(this.id)" onblur="uppercase(this.id)">
+            </div>
+              <div data-role="fieldcontain">
+                <label for="email">Name</label>
+                <input type="text" name="name" id="name" value="" onblur="uppercase(this.id)">
+            </div>
+            <button id = "dialogAlert" data-transition="pop">Berikan Saya Tip PERCUMA Tentang Penternakan Kambing SEKARANG!!</button>
+        </form>
+
+        <p>
+            Find Us!
+        </p>
+            <br>
+            <center><div id="map"></div></center>
+        
+        </div>
+        <div data-role="footer">
+            <center>Copyright 2021</center>
+        </div>
+    </div>
+
+        <div data-role="page" id="page-2" class="w3-theme-l2" >
+            <div data-role="navbar" >
+                <ul class="navigation">
+                    <li><a href="#page-1">About Rahsia Kambing</a></li>
+                    <li><a href="#page-2">About Rahsia Kambing</a></li>
+                    <li><a href="#page-3">Kaedah Pembayaran</a></li>
+                </ul>
+            </div>
+            <div data-role="content2" >
+                <hr>
+                <h1>ABOUT RAHSIA KAMBING</h1>
+                <hr>
+                <br>
+                <br>
+                <center>
+                <div class="w3-content w3-section" style="max-width:500px">
+                    <img class="mySlides" src="img/12.jfif" style="width:100%">
+                    <img class="mySlides" src="img/123.jfif" style="width:100%">
+                    <img class="mySlides" src="img/1234.jfif" style="width:100%">
+                    <img class="mySlides" src="img/1245.jfif" style="width:100%">
+                  </div>
+                </center>
+                  <br>
+                  <br>
+                <p>Assalammualaikum & salam sejahtera... Seringkali... kita terbaca tentang kisah-kisah kejayaan petani dan juga
+                    penternak yang mampu menjana pendapatan beribu-ribu ringgit sebulan hasil daripada tanaman dan juga ternakan
+                    yang mereka usahakan....</p>
+                    <br>
+                    <br>
+                <center><img src = "img/susu.PNG"></center>
+                <p>Banyak kisah-kisah kejayaan usahawan-usahawan tani ini dipaparkan, sama ada di akhbar mahupun TV. Kisah-kisah
+                    ini amat mengujakan kepada saya, kerana saya amat meminati bidang pertanian dan penternakan. Sememangnya,
+                    sudah lama saya menyimpan hasrat untuk menceburkan diri di dalam bidang pertanian dan juga penternakan ini.
+                    Tetapi, disebabkan saya bekerja makan gaji.. maka niat tersebut terpaksa dipendamkan.</p>
+                    <br>
+                    <h2>
+                        Hasrat Terbantut..
+                    </h2>
+                    <br>
+                    <p>Ditambah lagi dengan kekurangan sumber maklumat tentang bagaimana hendak memulakan serta menceburkan diri
+                        di dalam projek pertanian & penternakan ini. Menyebabkan, hasrat saya untuk bergelar seorang usahawan tani yang
+                        berjaya terbenam.</p>
+                    <br>
+                    <p>Sehinggalah pada suatu hari, sewaktu saya pulang ke kampung di Melaka, saya telah terserempak dengan
+                        seorang pakcik yang menetap di kampung saya. Saya gelarkan dia pakcik H, sejak dulu lagi, saya memang tahu
+                        pakcik H ini ada menternak kambing.. tapi pada waktu itu, saya tidak ambil peduli sangat.. maklumlah.. orang
+                        kampung bela kambing... biasalah kan?</p>
+                    <br>
+                    <p>
+                        Dulu, pakcik H ini membela 5 ekor kambing.. tapi, setelah 7 tahun berlalu, bilangan kambingnya telah mencecah
+                        1,000 ekor. Pergh!! Saya memang betul-betul tidak sangka.. pakcik H yang dulu saya pandang hanyalah seorang
+                        "pakcik kampung yang biasa-biasa".. kini telah bertukar menjadi seorang penternak kambing yang sangat berjaya!.
+                        Perkara ini telah membuka minda dan fikiran saya untuk melihat bidang penternakan kambing ini dengan lebih luas &
+                        positif. Saya mula mendekati pakcik H dan mula mempelajari serba sedikit mengenai selok belok penternakan
+                        kambing. Alhamdulilah.. pakcik H tidak kedekut ilmu dan sudi berkongsi pengalaman beliau di dalam usaha
+                        menternak kambing.
+                    </p>
+                </div>
+                <div data-role="footer">
+                    <center>Copyright 2021</center>
+                </div>
+            </div>
+
+             <div data-role="page" id="page-3" class="w3-theme-l2" >
+                    <div data-role="navbar" >
+                        <ul class="navigation">
+                            <li><a href="#page-1">About Rahsia Kambing</a></li>
+                            <li><a href="#page-2">About Rahsia Kambing</a></li>
+                            <li><a href="#page-3">Kaedah Pembayaran</a></li>
+                        </ul>
+                    </div>
+                <div id="content3">
+                    <hr>
+                    <h1>KAEDAH Pembayaran</h1>
+                    <hr>
+                    <div>
+                        <p>
+                            Langkah 1) Sila login ke akaun Maybank2u/CIMBClicks/BankIslma anda dan lakukan "fund transfer"<br>
+                            ke salah satu akaun bank dibawah sebanyak RM47.
+                        </p>
+                        <br>
+                        <p>
+                            <ul>
+                                <li>Maybank 582021801450-Extreme D Enterprise</li>
+                                <li>Bank Islam 12029020241421- Mohd Suhaimy Abu Bakar</li>
+                                <li>CIMB 12180079689520-Siti Noorhafezah Maarop</li>
+                            </ul>
+                        </p>
+                        <br>
+                        <p>
+                            Langkah 2) Selepas itu, simpan resit transaksi yang anda terima<br>
+                            dan sila isikan borang pengesahan bayaran dibawah.
+                        </p>
+                        <p>
+                            <center><input type = "checkbox">Ya! Saya telah membuat pembayaran .Sila hantarkan produk tersebut ke alamat saya seperti di bawah.</center>
+                        </p>
+                    </div>
+                    <form>
+                        <center>
+                        <table bgcolor="#F2F3F4" style="width: 560px;" border="1" >
+                            <tr>
+                                <td colspan="3">Sila isikan borang dibawah lengkap dengan data yang benar dan sah sahaja. Sebarang maklumat palsu adalah dilarang sama sekalu. IP anda akan direkod untuk tujuan keselamatan.<br><br><font color="red">*</font>menandakan ruangan tersebut WAJIB di isi.</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td  style="width: 30px;">
+                                    Nama Penuh Anda
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <input style="width: 80%;"><font color="red">*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                     Email Anda
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <input type="email" style="width: 80%;"><font color="red">*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    No.Telefon Anda
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <input type="number" style="width: 80%;"><font color="red">*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Alamat Surat Menyurat<br>(Jika Perlu)
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <textarea style="width: 80%;height: 80%;"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Kaedah Pembayaran</strong>
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <select>
+                                        <option>Perbankan Internnet</option>
+                                        <option>Deposit Bank</option>
+                                        <option>ATM Deposit</option>
+                                        <option>ATM Transfer</option>
+                                    </select>
+                                    <font color="red">*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Bank</strong>
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <select>
+                                        <option>Maybank</option>
+                                        <option>RHB</option>
+                                        <option>Bank Islam</option>
+                                        <option>Public Bank</option>
+                                    </select>
+                                    <font color ="red">*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Tarikh Pembayaran</strong>
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <input style="width: 80%;"><font color="red">*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Masa Pembayaran</strong>
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <input style="width: 80%;"><font color="red">*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Bukti Transaksi Pembayaran
+                                </td>
+                                <td align="center">
+                                    :
+                                </td>
+                                <td>
+                                    <textarea style="width: 80%;height: 100px;"></textarea><font color="red">*</font>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th colspan="3">
+                                    <button id = "Submit" data-transition="pop">Hantar Maklumat Pembayaran</button>
+                                </th>
+                            </tr>
+                        </table>
+                    </center>
+                    </form>
+                </div>
+
+
+            <div data-role="footer">
+                <center>Copyright 2021</center>
+            </div>
+        </div>
+    </body>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoid2VpamllNjk2NiIsImEiOiJja3B0aHV2emQwZGsxMnBvYWY3dHVja2ZnIn0.EFR-ZDLET1IwMm1KuNnTjQ';
+    var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/streets-v11', // custom style url from https://studio.mapbox.com/
+    center: [41, 21], // starting position
+    zoom: 3 // starting zoom
+});
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+</html>
